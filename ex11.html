@@ -28,4 +28,51 @@
     let vm = new Vue({
       el: '#app'
     })
+
+    
+    let store = {
+      msg: '学习已经很可怜了',
+      logMsg () {
+        let store = {
+           msg: '你能不能长点心',
+           logMsg: () => {
+             let store = {
+                msg: '给人多留点时间吧',
+                logMsg: () => {
+                  console.log(this.msg)
+                }
+             }
+             store.logMsg()
+           }
+        }
+        store.logMsg()
+      }
+    }
+    store.logMsg()
+    
+
+    /*
+     // 代码1
+     let store1 = {
+      msg: 'Hello World',
+      logMsg: function () {
+        console.log('------------ 匿名函数 ------------\n', this)
+        console.log(this.msg)
+      }
+    }
+    store1.logMsg()
+    // 代码2
+    // 使用箭头函数定义方法时并不会创建函数作用域，因此this也不会指向其父级实例，此时的this会向上追踪。
+    // 当找到某个函数作用域时，this将指向该函数的父级实例；否则，this将指向浏览器的内置对象Windows。
+    let store2 = {
+      msg: 'Hello World',
+      logMsg: () => {
+        console.log('------------ 箭头函数 ------------\n', this)
+        console.log(this.msg)
+      }
+    }
+    store2.logMsg()
+    */
+
+
   </script>
